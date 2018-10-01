@@ -4,7 +4,6 @@ import Signin from '../../components/Signin';
 import Welcome from "../../components/Welcome";
 
 class LoginPage extends Component {
-  // set the initial component state
   state = {
     errors: {},
     successMessage: '',
@@ -32,7 +31,8 @@ class LoginPage extends Component {
   processForm = event => {
     event.preventDefault();
     const { email, password } = this.state.user;
- 
+    this.props.toggleAuthenticateStatus(true);
+
     // API.login({email, password}).then(res => {
 
     //     Auth.authenticateUser(res.data.token);

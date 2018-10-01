@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import Main from "./pages/Main";
 import { PrivateRoute, PropsRoute, LoggedOutRoute } from './components/Routes';
 import Welcome from "./components/Welcome";
+import Auth from "./utils/Auth";
 
 class App extends Component {
 
@@ -13,10 +14,8 @@ class App extends Component {
     authenticated: false,
   }
 
-  toggleAuthenticateStatus(){
-    this.setState({
-      authenticated: !this.state.authenticated
-    })
+  toggleAuthenticateStatus = () => {
+    this.setState({authenticated: Auth.authenticateUser()});
   }
 
   render() {

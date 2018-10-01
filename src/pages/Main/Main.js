@@ -9,6 +9,7 @@ const Main = () => (
         <label htmlFor="rent-btn">I would like to ride a bike</label>
         <Link to={'/lend'} id="lend-btn">LEND</Link>
         <label htmlFor="lend-btn">I would like to share a bike</label>
+        <Link to={'/logout'} id="logout-btn">LOGOUT</Link>
     </React.Fragment>
 )
 

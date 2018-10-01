@@ -9,6 +9,7 @@ import Welcome from "./components/Welcome";
 import Auth from "./utils/Auth";
 import Rent from "./pages/Rent";
 import Lend from "./pages/Lend";
+import LogoutFunction from "./components/LogoutFunction";
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
   }
 
   toggleAuthenticateStatus = () => {
-    this.setState({authenticated: Auth.authenticateUser()});
+    this.setState({authenticated: !this.state.authenticated});
   }
 
   render() {
@@ -36,6 +37,7 @@ class App extends Component {
           <PrivateRoute exact path="/lend" component={Lend} 
                                         authenticated={this.state.authenticated}
                                         toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
+          <PropsRoute path="/logout" component={LogoutFunction} toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
         </Switch>
       </Router>
     );

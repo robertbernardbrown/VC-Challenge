@@ -32,27 +32,6 @@ class LoginPage extends Component {
     event.preventDefault();
     const { email, password } = this.state.user;
     this.props.toggleAuthenticateStatus(true);
-
-    // API.login({email, password}).then(res => {
-
-    //     Auth.authenticateUser(res.data.token);
-
-    //     this.props.toggleAuthenticateStatus()
-
-    //     // redirect signed in user to dashboard
-    //     this.props.history.push('/');
-    //     this.setState({
-    //       errors: {}
-    //     });
-    // })
-    // .catch(( {response} ) => {
-    //     const errors = response.data.errors ? response.data.errors : {};
-    //     errors.summary = response.data.message;
-
-    //     this.setState({
-    //       errors
-    //     });
-    //   });
   }
 
   /**

@@ -41,6 +41,39 @@ const SignUpForm = ({onSubmit,onChange,errors,user}) => (
           />
         </div>
 
+        <div className="field-line">
+          <input
+              placeholder={errors.credit ? errors.credit.toString() : "Credit Card Number"}
+              type="credit-number"
+              name="credit-number"
+              onChange={onChange}
+              className={errors.credit ? "has-error" : "card-secure"}
+              value={user.credit}
+          />
+        </div>
+
+        <div className="field-line">
+          <input
+              placeholder={errors.security ? errors.security.toString() : "Credit Security Number"}
+              type="security-number"
+              name="security-number"
+              onChange={onChange}
+              className={errors.security ? "has-error" : "card-secure"}
+              value={user.security}
+          />
+        </div>
+
+        <div className="field-line">
+          <input
+              placeholder={errors.creditExpiration ? errors.creditExpiration.toString() : "Credit Card Expiration"}
+              type="creditExpiration"
+              name="creditExpiration"
+              onChange={onChange}
+              className={errors.creditExpiration ? "has-error" : "card-secure"}
+              value={user.creditExpiration}
+          />
+        </div>
+
         <div className="button-line">
           <button className="btn btn-primary btn-block" type="submit">Sign-Up</button>
         </div>

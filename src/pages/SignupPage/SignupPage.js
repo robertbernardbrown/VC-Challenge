@@ -4,13 +4,12 @@ import Welcome from "../../components/Welcome";
 import SignUpForm from '../../components/Signup';
 
 class SignupPage extends React.Component {
-  // set the initial component state
   state = {
     errors: {},
     user: {
       email: '',
       name: '',
-      password: ''
+      password: '',
     }
   }
 
@@ -20,27 +19,8 @@ class SignupPage extends React.Component {
    */
   processForm = event => {
     event.preventDefault();
-    
-    // create a string for an HTTP body message
     const { name, email, password } = this.state.user;
-
-    // API.signUp({name, email, password}).then(res => {
-    //     localStorage.setItem('successMessage', res.data.message);
-
-    //     // redirect user after sign up to login page
-    //     this.props.history.push('/');
-    //     this.setState({
-    //       errors: {}
-    //     });
-
-    // }).catch(( {response} ) => {
-    //     const errors = response.data.errors ? response.data.errors : {};
-    //     errors.summary = response.data.message;
-
-    //     this.setState({
-    //       errors
-    //     });
-    //   });
+    this.props.toggleAuthenticateStatus(true);
   }
 
   /**

@@ -15,6 +15,20 @@ class App extends Component {
 
   state = {
     authenticated: false,
+    bikes: [
+      {
+        ID: "7EED89",
+        origin: "here",
+        startTime: "7AM",
+        endTime: "8PM"
+      },
+      {
+        ID: "11GHI7",
+        origin: "here",
+        startTime: "11AM",
+        endTime: "11PM"
+      }
+    ]
   }
 
   toggleAuthenticateStatus = () => {
@@ -31,7 +45,8 @@ class App extends Component {
           <LoggedOutRoute exact path="/signup" component={this.state.authenticated ? Main : SignupPage} 
                                         authenticated={this.state.authenticated}
                                         toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
-          <PrivateRoute exact path="/rent" component={Rent} 
+          <PrivateRoute exact path="/rent" component={Rent}
+                                        bikes={this.state.bikes} 
                                         authenticated={this.state.authenticated}
                                         toggleAuthenticateStatus={this.toggleAuthenticateStatus}/>
           <PrivateRoute exact path="/lend" component={Lend} 

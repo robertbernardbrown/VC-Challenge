@@ -9,3 +9,15 @@ input.card-secure {
 #mapid {
     height: 300px;
 }
+
+#bike-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bike-list-cell {
+    padding-left: 10px;
+    padding-right: 10px
+}
+

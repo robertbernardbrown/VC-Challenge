@@ -5,3 +5,7 @@ form {
 input.card-secure {
     -webkit-text-security: disc;
 }
+
+#mapid {
+    height: 300px;
+}

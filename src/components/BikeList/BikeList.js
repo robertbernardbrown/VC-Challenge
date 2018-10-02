@@ -12,13 +12,13 @@ const BikeList = (props) => (
                     <th className="bike-list-cell">Action</th>
                 </tr>
                 {props.bikes.map((cur, i) => 
-                <tr key={i}>
+                cur ? <tr key={i}>
                     <td className="bike-list-cell">{cur.ID}</td>
                     <td className="bike-list-cell">{cur.origin}</td>
                     <td className="bike-list-cell">{cur.startTime}</td>
                     <td className="bike-list-cell">{cur.endTime}</td>
-                    <td className="bike-list-cell"><button>Rent</button></td>
-                </tr>
+                    <td className="bike-list-cell"><button className="rent-btn">Rent</button></td>
+                </tr> : <tr>Sorry, there are no bikes nearby!</tr>
                 )}
             </tbody>
         </table>

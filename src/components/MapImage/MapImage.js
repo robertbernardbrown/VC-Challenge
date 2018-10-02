@@ -12,6 +12,18 @@ class MapImage extends Component{
             id: 'mapbox.streets',
             accessToken: 'pk.eyJ1IjoiYm9iYnJvd24xOCIsImEiOiJjam1xb242YzYxc2U0M3ZueXM4dzQ0dmhiIn0.7H6qz0omv4yGsETQ4HcaHA'
         }).addTo(mymap);
+
+        mymap.locate({setView: true, watch: true})
+        .on('locationfound', function(e){
+            var marker = L.marker([e.latitude, e.longitude]).bindPopup('Your are here :)');
+            var marker2 = L.marker([34.005861999999995, -83.928153]).bindPopup('Your are here :)');
+            mymap.addLayer(marker);
+            mymap.addLayer(marker2);
+        })
+       .on('locationerror', function(e){
+            console.log(e);
+            alert("Location access denied.");
+        });
     }
 
     render(){
